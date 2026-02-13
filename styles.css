@@ -356,6 +356,15 @@ a:hover {
     opacity: 0.9;
 }
 
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+    border: 5px solid white;
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
@@ -1045,6 +1054,11 @@ a:hover {
     
     .profile-placeholder i {
         font-size: 6rem;
+    }
+    
+    .profile-photo {
+        width: 220px;
+        height: 220px;
     }
     
     .timeline::before {
