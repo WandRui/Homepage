@@ -117,34 +117,45 @@
     <section id="education" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
+            <div class="education-container">
+                <div class="education-card">
+                    <img src="figures/hkust_logo.png" alt="HKUST Logo" class="education-logo">
+                    <div class="education-content">
+                        <div class="education-header">
                             <h3>The Hong Kong University of Science and Technology</h3>
-                            <span class="timeline-date">Sep 2023 - May 2027 (Expected)</span>
+                            <span class="education-date">Sep 2023 - May 2027</span>
                         </div>
-                        <p class="timeline-subtitle">Bachelor of Engineering in Computer Science - Extended Major in AI</p>
-                        <ul class="timeline-details">
-                            <li><strong>Cumulative GPA:</strong> 3.983 / 4.30</li>
-                            <li><strong>Major CGA:</strong> 4.073 / 4.30</li>
-                            <li><strong>Honors:</strong> Dean's List (All Semesters)</li>
-                            <li><strong>Scholarship:</strong> University Continuing Scholarship (Total 60,000 HKD)</li>
-                        </ul>
+                        <p class="education-degree">Bachelor of Engineering in Computer Science - Extended Major in AI</p>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <span class="education-detail-label">Cumulative GPA:</span> 3.983 / 4.30
+                            </div>
+                            <div class="education-detail-item">
+                                <span class="education-detail-label">Major CGA:</span> 4.073 / 4.30
+                            </div>
+                            <div class="education-detail-item">
+                                <span class="education-detail-label">Honors:</span> Dean's List (All Semesters)
+                            </div>
+                            <div class="education-detail-item">
+                                <span class="education-detail-label">Scholarship:</span> University Continuing Scholarship (Total 60,000 HKD)
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
+                
+                <div class="education-card">
+                    <img src="figures/UT_logo.png" alt="UT Austin Logo" class="education-logo">
+                    <div class="education-content">
+                        <div class="education-header">
                             <h3>The University of Texas at Austin</h3>
-                            <span class="timeline-date">Jan 2026 - May 2026</span>
+                            <span class="education-date">Jan 2026 - May 2026</span>
                         </div>
-                        <p class="timeline-subtitle">Semester Exchange, Electronic and Computer Engineering</p>
-                        <ul class="timeline-details">
-                            <li><strong>Coursework:</strong> Software Engineering, Machine Learning & Data Analytics for Edge AI</li>
-                        </ul>
+                        <p class="education-degree">Semester Exchange, Electronic and Computer Engineering</p>
+                        <div class="education-details">
+                            <div class="education-detail-item">
+                                <span class="education-detail-label">Coursework:</span> Software Engineering, Machine Learning & Data Analytics for Edge AI
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,48 +166,69 @@
     <section id="research" class="section">
         <div class="container">
             <h2 class="section-title">Research Experience</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-header">
-                        <div class="research-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="research-meta">
-                            <span class="research-status">Under Review (ACL)</span>
-                            <span class="research-date">Aug 2025</span>
+            <div class="research-container">
+                <div class="research-timeline">
+                    <div class="research-item">
+                        <div class="research-marker"></div>
+                        <div class="research-card" data-research-id="research-1">
+                            <div class="research-header">
+                                <div class="research-header-left">
+                                    <div class="research-title-row">
+                                        <h3 class="research-title">Revealing Instability of Decision-Making under Epistemic Uncertainty</h3>
+                                        <i class="fas fa-chevron-down research-expand-icon"></i>
+                                    </div>
+                                    <div class="research-meta-row">
+                                        <span class="research-status">Under Review (ACL)</span>
+                                        <span class="research-date">Aug 2025</span>
+                                    </div>
+                                    <p class="research-role">First Author</p>
+                                </div>
+                            </div>
+                            <div class="research-details">
+                                <div class="research-details-content">
+                                    <ul class="research-description">
+                                        <li>Designed a three-stage experiment to evaluate LLM decision-making, benchmarking model behaviors against Prospect Theory axioms such as Loss Aversion and Asymmetric Risk Preferences</li>
+                                        <li>Revealed that modeling these systems with economic frameworks is not consistently reliable, particularly under diverse linguistic forms, highlighting potential Model Risk and instability</li>
+                                    </ul>
+                                    <div class="research-links">
+                                        <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
+                                            <i class="fas fa-file-pdf"></i> arXiv Paper
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="research-title">Revealing Instability of Decision-Making under Epistemic Uncertainty</h3>
-                    <p class="research-role"><strong>First Author</strong></p>
-                    <ul class="research-details">
-                        <li>Designed a three-stage experiment to evaluate LLM decision-making, benchmarking model behaviors against Prospect Theory axioms such as Loss Aversion and Asymmetric Risk Preferences</li>
-                        <li>Revealed that modeling these systems with economic frameworks is not consistently reliable, particularly under diverse linguistic forms, highlighting potential Model Risk and instability</li>
-                    </ul>
-                    <div class="research-links">
-                        <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
-                            <i class="fas fa-file-pdf"></i> arXiv Paper
-                        </a>
-                    </div>
-                </div>
-                <div class="research-card">
-                    <div class="research-header">
-                        <div class="research-icon">
-                            <i class="fas fa-database"></i>
+                    
+                    <div class="research-item">
+                        <div class="research-marker"></div>
+                        <div class="research-card" data-research-id="research-2">
+                            <div class="research-header">
+                                <div class="research-header-left">
+                                    <div class="research-title-row">
+                                        <h3 class="research-title">Noise-Aware Verbal Confidence Calibration for LLMs in RAG Systems</h3>
+                                        <i class="fas fa-chevron-down research-expand-icon"></i>
+                                    </div>
+                                    <div class="research-meta-row">
+                                        <span class="research-status">Under Review (ACL)</span>
+                                        <span class="research-date">Jan 2026</span>
+                                    </div>
+                                    <p class="research-role">Co-first Author</p>
+                                </div>
+                            </div>
+                            <div class="research-details">
+                                <div class="research-details-content">
+                                    <ul class="research-description">
+                                        <li>Developed NAACL, a framework that resolves RAG overconfidence by training models to explicitly discern retrieval noise and calibrate their verbal confidence</li>
+                                    </ul>
+                                    <div class="research-links">
+                                        <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
+                                            <i class="fas fa-file-pdf"></i> arXiv Paper
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="research-meta">
-                            <span class="research-status">Under Review (ACL)</span>
-                            <span class="research-date">Jan 2026</span>
-                        </div>
-                    </div>
-                    <h3 class="research-title">Noise-Aware Verbal Confidence Calibration for LLMs in RAG Systems</h3>
-                    <p class="research-role"><strong>Co-first Author</strong></p>
-                    <ul class="research-details">
-                        <li>Developed NAACL, a framework that resolves RAG overconfidence by training models to explicitly discern retrieval noise and calibrate their verbal confidence</li>
-                    </ul>
-                    <div class="research-links">
-                        <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
-                            <i class="fas fa-file-pdf"></i> arXiv Paper
-                        </a>
                     </div>
                 </div>
             </div>
@@ -207,54 +239,56 @@
     <section id="skills" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Machine Learning & Programming</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">C++</span>
+                        </div>
                     </div>
-                    <h3>Machine Learning & Programming</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Scikit-Learn</span>
-                        <span class="skill-tag">C++</span>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Software Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Bash Scripting</span>
+                            <span class="skill-tag">GitHub Copilot</span>
+                            <span class="skill-tag">Cursor</span>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>LLM Operations</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">vLLM</span>
+                            <span class="skill-tag">LlamaFactory</span>
+                        </div>
                     </div>
-                    <h3>Software Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Bash Scripting</span>
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">Cursor</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>LLM Operations</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">vLLM</span>
-                        <span class="skill-tag">LlamaFactory</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Relevant Coursework</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Structures (A+)</span>
-                        <span class="skill-tag">Knowledge Discovery (A)</span>
-                        <span class="skill-tag">Operating Systems</span>
-                        <span class="skill-tag">Algorithms</span>
-                        <span class="skill-tag">Probability (A+)</span>
-                        <span class="skill-tag">Linear Algebra (A+)</span>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Relevant Coursework</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Structures (A+)</span>
+                            <span class="skill-tag">Knowledge Discovery (A)</span>
+                            <span class="skill-tag">Operating Systems</span>
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">Probability (A+)</span>
+                            <span class="skill-tag">Linear Algebra (A+)</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -281,22 +315,6 @@
                     <h3>Mentor</h3>
                     <p class="activity-subtitle">CSE Peer Mentor Program</p>
                     <p>Provided academic guidance and career planning advice to junior students, fostering a collaborative learning environment</p>
-                </div>
-            </div>
-            <div class="additional-info">
-                <div class="info-item">
-                    <i class="fas fa-language"></i>
-                    <div>
-                        <h4>Languages</h4>
-                        <p>English (IELTS 7.5), Mandarin (Native), Cantonese (Passive)</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-heart"></i>
-                    <div>
-                        <h4>Interests</h4>
-                        <p>Strategic Games, Poker, Badminton</p>
-                    </div>
                 </div>
             </div>
         </div>

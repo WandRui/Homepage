@@ -78,6 +78,21 @@ document.addEventListener('click', (e) => {
 });
 
 // ===========================
+// Research Section - Expandable Cards
+// ===========================
+
+document.querySelectorAll('.research-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        // Don't toggle if clicking on a link
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+            return;
+        }
+        
+        this.classList.toggle('expanded');
+    });
+});
+
+// ===========================
 // Scroll Animations
 // ===========================
 
@@ -156,15 +171,23 @@ skillTags.forEach(tag => {
 // Research Card Expansion (Optional)
 // ===========================
 
+// ===========================
+// Research Card Interaction
+// ===========================
+
 const researchCards = document.querySelectorAll('.research-card');
 
 researchCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
-        card.style.borderLeftWidth = '8px';
+        if (!card.classList.contains('expanded')) {
+            card.style.transform = 'translateY(-4px)';
+        }
     });
     
     card.addEventListener('mouseleave', () => {
-        card.style.borderLeftWidth = '4px';
+        if (!card.classList.contains('expanded')) {
+            card.style.transform = 'translateY(0)';
+        }
     });
 });
 
@@ -181,7 +204,7 @@ const createScrollProgress = () => {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #3498db, #e74c3c);
+        background: linear-gradient(90deg, #c0c0c0, #6b7280);
         z-index: 9999;
         transition: width 0.1s ease;
     `;
@@ -229,13 +252,14 @@ emailLinks.forEach(link => {
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    background-color: #2c3e50;
+                    background: linear-gradient(135deg, #6b7280, #4a4a4a);
                     color: white;
                     padding: 1rem 2rem;
                     border-radius: 8px;
                     font-size: 1rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     z-index: 10000;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
                     animation: fadeIn 0.3s ease;
                 `;
                 document.body.appendChild(tooltip);
@@ -338,7 +362,7 @@ window.addEventListener('beforeprint', () => {
 // Console Easter Egg
 // ===========================
 
-console.log('%c👋 Hello, fellow developer!', 'font-size: 20px; font-weight: bold; color: #3498db;');
-console.log('%cInterested in how this site was built?', 'font-size: 14px; color: #2c3e50;');
-console.log('%cCheck out the source code on GitHub: https://github.com/WandRui/Homepage', 'font-size: 12px; color: #666;');
-console.log('%c\n🎓 Rui Wang - HKUST Computer Science & AI', 'font-size: 12px; font-style: italic; color: #e74c3c;');
+console.log('%c👋 Hello, fellow developer!', 'font-size: 20px; font-weight: bold; color: #6b7280;');
+console.log('%cInterested in how this site was built?', 'font-size: 14px; color: #4a4a4a;');
+console.log('%cCheck out the source code on GitHub: https://github.com/WandRui/Homepage', 'font-size: 12px; color: #9ca3af;');
+console.log('%c\n🎓 Rui Wang - HKUST Computer Science & AI', 'font-size: 12px; font-style: italic; color: #6b7280;');
