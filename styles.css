@@ -56,6 +56,27 @@ body {
     line-height: 1.7;
     background-color: var(--bg-color);
     overflow-x: hidden;
+    position: relative;
+}
+
+/* ===========================
+   Particles.js Background
+   =========================== */
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--bg-color);
+}
+
+/* Ensure content is above particles */
+nav, section, footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* ===========================
@@ -110,10 +131,45 @@ a:hover {
 
 .section {
     padding: var(--spacing-xl) 0;
+    position: relative;
+    background: transparent;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(192, 192, 192, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-alt {
-    background-color: var(--bg-alt);
+    background: transparent;
+    position: relative;
+}
+
+.section-alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(249, 250, 251, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .section-title {
@@ -123,6 +179,8 @@ a:hover {
     margin-bottom: var(--spacing-lg);
     position: relative;
     padding-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
 }
 
 .section-title::after {
@@ -135,6 +193,17 @@ a:hover {
     height: 3px;
     background: linear-gradient(90deg, var(--silver), var(--accent-color));
     border-radius: 2px;
+}
+
+.section-title::before {
+    content: '✦';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    font-size: 1.2rem;
+    color: var(--silver);
+    opacity: 0.6;
 }
 
 /* ===========================
@@ -239,7 +308,7 @@ a:hover {
     justify-content: center;
     padding-top: 70px;
     position: relative;
-    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 50%, #ffffff 100%);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -249,8 +318,8 @@ a:hover {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(192, 192, 192, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(192, 192, 192, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(192, 192, 192, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(192, 192, 192, 0.02) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
 }
@@ -262,7 +331,7 @@ a:hover {
     right: 10%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(192, 192, 192, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -410,6 +479,16 @@ a:hover {
     object-fit: cover;
     box-shadow: var(--shadow-xl);
     border: 5px solid var(--silver-light);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .scroll-indicator {
@@ -437,6 +516,25 @@ a:hover {
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
+    position: relative;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.about-text::before {
+    content: '💡';
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    font-size: 1.8rem;
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
 }
 
 .about-text p {
@@ -486,6 +584,133 @@ a:hover {
    Education Section
    =========================== */
 
+/* ===========================
+   News Section
+   =========================== */
+
+.news-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.news-item {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    transition: all var(--transition-normal);
+    position: relative;
+    animation: slideInLeft 0.5s ease-out backwards;
+}
+
+.news-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.news-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.news-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.news-item:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top: 2px solid var(--border-light);
+}
+
+.news-item:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.news-item:hover {
+    background: rgba(249, 250, 251, 0.9);
+    backdrop-filter: blur(15px);
+    padding-left: 2.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.news-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+    background: rgba(249, 250, 251, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    flex-shrink: 0;
+}
+
+.news-month {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1.2;
+}
+
+.news-year {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.news-content {
+    flex: 1;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.news-icon {
+    font-size: 1.3rem;
+    margin-right: 0.25rem;
+    flex-shrink: 0;
+}
+
+.news-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.news-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* ===========================
+   Education Section
+   =========================== */
+
 .education-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -495,7 +720,8 @@ a:hover {
 }
 
 .education-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
     border-radius: 16px;
     padding: 2.5rem;
@@ -518,6 +744,37 @@ a:hover {
     background: linear-gradient(180deg, var(--silver), var(--accent-color));
 }
 
+.education-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.education-card:hover::after {
+    animation: shine 1.5s ease-in-out;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+        right: -50%;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        right: 150%;
+    }
+}
+
 .education-card:hover {
     box-shadow: var(--shadow-xl);
     border-color: var(--silver);
@@ -529,7 +786,8 @@ a:hover {
     height: 120px;
     object-fit: contain;
     flex-shrink: 0;
-    background: var(--bg-alt);
+    background: rgba(249, 250, 251, 0.5);
+    backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 12px;
     border: 2px solid var(--border-light);
@@ -646,13 +904,29 @@ a:hover {
 }
 
 .research-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+}
+
+.research-card::before {
+    content: '📌';
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.research-card:hover::before {
+    opacity: 0.3;
 }
 
 .research-card:hover {
@@ -815,7 +1089,8 @@ a:hover {
 }
 
 .skill-category {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border: 2px solid var(--border-light);
     border-radius: 16px;
@@ -883,6 +1158,23 @@ a:hover {
     font-size: 0.9rem;
     font-weight: 500;
     transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill-tag:hover::before {
+    left: 100%;
 }
 
 .skill-tag:hover {
@@ -904,12 +1196,31 @@ a:hover {
 }
 
 .activity-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border: 2px solid var(--border-light);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--silver), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.activity-card:hover::before {
+    transform: scaleX(1);
 }
 
 .activity-card:hover {
@@ -1015,7 +1326,8 @@ a:hover {
 }
 
 .contact-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     padding: 2.5rem 2rem;
     border: 2px solid var(--border-light);
     border-radius: 12px;
@@ -1193,6 +1505,22 @@ a:hover {
     .stats {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .news-item {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .news-date {
+        flex-direction: row;
+        gap: 0.5rem;
+        width: auto;
+    }
+    
+    .news-month, .news-year {
+        font-size: 1rem;
     }
     
     .nav-menu {

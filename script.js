@@ -366,3 +366,101 @@ console.log('%c👋 Hello, fellow developer!', 'font-size: 20px; font-weight: bo
 console.log('%cInterested in how this site was built?', 'font-size: 14px; color: #4a4a4a;');
 console.log('%cCheck out the source code on GitHub: https://github.com/WandRui/Homepage', 'font-size: 12px; color: #9ca3af;');
 console.log('%c\n🎓 Rui Wang - HKUST Computer Science & AI', 'font-size: 12px; font-style: italic; color: #6b7280;');
+
+// ===========================
+// Particles.js Background Animation
+// ===========================
+
+if (typeof particlesJS !== 'undefined') {
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: ['#c0c0c0', '#9ca3af', '#6b7280']
+            },
+            shape: {
+                type: ['circle', 'triangle', 'polygon'],
+                stroke: {
+                    width: 0,
+                    color: '#000000'
+                },
+                polygon: {
+                    nb_sides: 6
+                }
+            },
+            opacity: {
+                value: 0.3,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 0.5,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 2,
+                    size_min: 0.5,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#c0c0c0',
+                opacity: 0.2,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: true,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.5
+                    }
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        retina_detect: true
+    });
+}
