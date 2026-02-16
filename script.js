@@ -24,7 +24,7 @@ function activateNavLink() {
     
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 80;
         const sectionId = section.getAttribute('id');
         
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -48,7 +48,7 @@ navLinks.forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 70;
+            const offsetTop = targetSection.offsetTop - 60;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -83,14 +83,60 @@ document.addEventListener('click', (e) => {
 
 document.querySelectorAll('.research-card').forEach(card => {
     card.addEventListener('click', function(e) {
-        // Don't toggle if clicking on a link
-        if (e.target.tagName === 'A' || e.target.closest('a')) {
+        // Don't toggle if clicking on a link or image
+        if (e.target.tagName === 'A' || e.target.closest('a') || 
+            e.target.classList.contains('research-thumbnail')) {
             return;
         }
         
         this.classList.toggle('expanded');
     });
 });
+
+// ===========================
+// Image Lightbox
+// ===========================
+
+const imageLightbox = document.getElementById('imageLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+const researchThumbnails = document.querySelectorAll('.research-thumbnail');
+
+// Open lightbox when clicking on research thumbnails
+researchThumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent card expansion
+        lightboxImage.src = thumbnail.src;
+        lightboxImage.alt = thumbnail.alt;
+        imageLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+});
+
+// Close lightbox when clicking the close button
+lightboxClose.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+});
+
+// Close lightbox when clicking outside the image
+imageLightbox.addEventListener('click', (e) => {
+    if (e.target === imageLightbox) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageLightbox.classList.contains('active')) {
+        closeLightbox();
+    }
+});
+
+function closeLightbox() {
+    imageLightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
 
 // ===========================
 // Scroll Animations
@@ -126,9 +172,9 @@ const scrollIndicator = document.querySelector('.scroll-indicator a');
 if (scrollIndicator) {
     scrollIndicator.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetSection = document.querySelector('#about');
+        const targetSection = document.querySelector('#news');
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 70;
+            const offsetTop = targetSection.offsetTop - 60;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -200,7 +246,7 @@ const createScrollProgress = () => {
     progressBar.id = 'scroll-progress';
     progressBar.style.cssText = `
         position: fixed;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 0%;
         height: 3px;
@@ -299,7 +345,7 @@ document.addEventListener('keydown', (e) => {
             const targetSection = sections[targetIndex];
             if (targetSection) {
                 e.preventDefault();
-                const offsetTop = targetSection.offsetTop - 70;
+                const offsetTop = targetSection.offsetTop - 60;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'

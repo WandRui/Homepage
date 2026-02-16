@@ -33,11 +33,11 @@
     --font-heading: 'Playfair Display', serif;
     
     /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-xs: 0.4rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.25rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -174,11 +174,11 @@ a:hover {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     display: inline-block;
     width: 100%;
 }
@@ -204,6 +204,16 @@ a:hover {
     font-size: 1.2rem;
     color: var(--silver);
     opacity: 0.6;
+}
+
+.section-title.small {
+    font-size: 1.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-title.small::before {
+    font-size: 1rem;
+    top: -20px;
 }
 
 /* ===========================
@@ -235,12 +245,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 60px;
 }
 
 .nav-logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
 }
@@ -248,15 +258,15 @@ a:hover {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
     color: var(--text-light);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
 }
 
 .nav-link::after {
@@ -342,7 +352,7 @@ a:hover {
     padding: 0 2rem;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -354,8 +364,8 @@ a:hover {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3.25rem;
+    margin-bottom: 0.75rem;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -363,34 +373,58 @@ a:hover {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     font-weight: 400;
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--text-color);
-    margin-bottom: 2rem;
+    margin-bottom: 0.85rem;
     max-width: 600px;
 }
 
-.hero-links {
+.hero-description:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.hero-contact-row {
     display: flex;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    width: fit-content;
+}
+
+.hero-contact-label {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.hero-contact-divider {
+    font-size: 1.1rem;
+    color: var(--border-color);
+    font-weight: 300;
+    user-select: none;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.875rem 1.75rem;
+    gap: 0.4rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 50px;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: all var(--transition-normal);
     cursor: pointer;
     border: 2px solid transparent;
@@ -423,12 +457,12 @@ a:hover {
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .social-links a {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -436,7 +470,7 @@ a:hover {
     background-color: var(--bg-alt);
     color: var(--accent-color);
     border: 2px solid var(--border-light);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     transition: all var(--transition-normal);
 }
 
@@ -450,6 +484,7 @@ a:hover {
 
 .hero-image {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     animation: fadeIn 1.5s ease;
@@ -473,12 +508,12 @@ a:hover {
 }
 
 .profile-photo {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: var(--shadow-xl);
-    border: 5px solid var(--silver-light);
+    border: 4px solid var(--silver-light);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -489,6 +524,73 @@ a:hover {
     50% {
         transform: translateY(-20px);
     }
+}
+
+/* Hero Education */
+.hero-education {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.hero-edu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 2px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.hero-edu-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--silver);
+}
+
+.hero-edu-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(249, 250, 251, 0.5);
+    padding: 0.4rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+}
+
+.hero-edu-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.hero-edu-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-edu-info p {
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-edu-info span {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    line-height: 1.2;
 }
 
 .scroll-indicator {
@@ -514,10 +616,10 @@ a:hover {
 }
 
 .about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.7;
     position: relative;
-    padding: 2.5rem;
+    padding: 2rem;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -530,7 +632,7 @@ a:hover {
     position: absolute;
     top: -15px;
     left: 30px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background: white;
     padding: 0.25rem 0.5rem;
     border-radius: 50%;
@@ -538,7 +640,7 @@ a:hover {
 }
 
 .about-text p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .stats {
@@ -598,8 +700,8 @@ a:hover {
 
 .news-item {
     display: flex;
-    gap: 2.5rem;
-    padding: 1.75rem 2rem;
+    gap: 1.5rem;
+    padding: 1rem 1.25rem;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-light);
@@ -655,8 +757,8 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 80px;
-    padding: 0.75rem 1rem;
+    min-width: 70px;
+    padding: 0.6rem 0.8rem;
     background: rgba(249, 250, 251, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 8px;
@@ -665,22 +767,22 @@ a:hover {
 }
 
 .news-month {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
     line-height: 1.2;
 }
 
 .news-year {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-light);
     font-weight: 500;
 }
 
 .news-content {
     flex: 1;
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-color);
     display: flex;
     align-items: center;
@@ -712,24 +814,24 @@ a:hover {
    =========================== */
 
 .education-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .education-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: var(--shadow-md);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     display: flex;
     align-items: flex-start;
-    gap: 2.5rem;
+    gap: 1.25rem;
     position: relative;
     overflow: hidden;
 }
@@ -782,22 +884,22 @@ a:hover {
 }
 
 .education-logo {
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     flex-shrink: 0;
     background: rgba(249, 250, 251, 0.5);
     backdrop-filter: blur(10px);
-    padding: 1rem;
-    border-radius: 12px;
-    border: 2px solid var(--border-light);
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
 }
 
 .education-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .education-header {
@@ -808,7 +910,7 @@ a:hover {
 }
 
 .education-header h3 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     margin: 0;
     line-height: 1.3;
@@ -816,26 +918,30 @@ a:hover {
 
 .education-date {
     color: var(--text-light);
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-weight: 500;
     white-space: nowrap;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.7rem;
     background: var(--bg-alt);
     border-radius: 20px;
     border: 1px solid var(--border-light);
 }
 
 .education-degree {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--accent-color);
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 .education-details {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.35rem;
+}
+
+.education-detail-item {
+    font-size: 0.9rem;
 }
 
 .education-detail-item {
@@ -863,7 +969,7 @@ a:hover {
    =========================== */
 
 .research-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
 }
@@ -871,7 +977,7 @@ a:hover {
 .research-timeline {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     position: relative;
 }
 
@@ -887,7 +993,7 @@ a:hover {
 
 .research-item {
     position: relative;
-    padding-left: 60px;
+    padding-left: 50px;
 }
 
 .research-marker {
@@ -904,15 +1010,107 @@ a:hover {
 }
 
 .research-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+}
+
+.research-thumbnail {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid var(--border-light);
+    margin: 1.5rem 0 1.5rem 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: zoom-in;
+}
+
+.research-card:hover .research-thumbnail {
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.03);
+}
+
+/* Image Lightbox */
+.image-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease;
+}
+
+.image-lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: all var(--transition-normal);
+    z-index: 10000;
+}
+
+.lightbox-close:hover {
+    background: white;
+    transform: rotate(90deg) scale(1.1);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.research-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 .research-card::before {
@@ -939,7 +1137,7 @@ a:hover {
 }
 
 .research-header {
-    padding: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -958,10 +1156,11 @@ a:hover {
 }
 
 .research-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--primary-color);
     margin: 0;
     line-height: 1.4;
+    font-weight: 600;
 }
 
 .research-expand-icon {
@@ -983,12 +1182,12 @@ a:hover {
 
 .research-status {
     display: inline-block;
-    padding: 0.375rem 1rem;
+    padding: 0.4rem 1.1rem;
     background: var(--bg-alt);
     color: var(--accent-color);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
@@ -1000,7 +1199,7 @@ a:hover {
 
 .research-role {
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     margin-top: 0.5rem;
 }
@@ -1018,7 +1217,7 @@ a:hover {
 }
 
 .research-details-content {
-    padding: 2rem;
+    padding: 0 1.5rem 1.5rem 0;
 }
 
 .research-description {
@@ -1026,7 +1225,7 @@ a:hover {
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
     margin-bottom: 1.5rem;
 }
 
@@ -1035,6 +1234,7 @@ a:hover {
     position: relative;
     line-height: 1.7;
     color: var(--text-color);
+    font-size: 0.98rem;
 }
 
 .research-description li::before {
@@ -1055,12 +1255,12 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.6rem;
     background: var(--bg-alt);
     color: var(--accent-color);
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     transition: all var(--transition-normal);
 }
@@ -1077,23 +1277,27 @@ a:hover {
    Skills Section
    =========================== */
 
+#skills.section {
+    padding: 2rem 0;
+}
+
 .skills-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .skill-category {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    padding: 2.5rem;
-    border: 2px solid var(--border-light);
-    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     text-align: left;
@@ -1124,21 +1328,21 @@ a:hover {
 }
 
 .skill-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.85rem;
+    border-radius: 10px;
     background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
 }
 
 .skill-category h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
     color: var(--primary-color);
 }
 
@@ -1150,12 +1354,12 @@ a:hover {
 
 .skill-tag {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.85rem;
     background: var(--bg-alt);
     color: var(--text-color);
     border: 1px solid var(--border-light);
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 18px;
+    font-size: 0.85rem;
     font-weight: 500;
     transition: all var(--transition-fast);
     position: relative;
@@ -1188,19 +1392,26 @@ a:hover {
    Activities Section
    =========================== */
 
+#activities.section {
+    padding: 2rem 0;
+}
+
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .activity-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    padding: 2.5rem;
-    border: 2px solid var(--border-light);
-    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     position: relative;
@@ -1230,29 +1441,34 @@ a:hover {
 }
 
 .activity-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
     background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.85rem;
 }
 
 .activity-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
     color: var(--primary-color);
 }
 
 .activity-subtitle {
     color: var(--accent-color);
     font-weight: 500;
-    font-size: 1.05rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.activity-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .activity-card p {
@@ -1306,6 +1522,10 @@ a:hover {
    Contact Section
    =========================== */
 
+#contact.section {
+    padding: 2rem 0;
+}
+
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
@@ -1313,24 +1533,24 @@ a:hover {
 }
 
 .contact-intro {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
 .contact-card {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
-    padding: 2.5rem 2rem;
-    border: 2px solid var(--border-light);
-    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
     display: flex;
@@ -1348,8 +1568,8 @@ a:hover {
 }
 
 .contact-card i {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
     color: var(--accent-color);
     transition: color var(--transition-normal);
 }
@@ -1359,8 +1579,8 @@ a:hover {
 }
 
 .contact-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
     color: var(--primary-color);
     transition: color var(--transition-normal);
 }
@@ -1370,8 +1590,8 @@ a:hover {
 }
 
 .contact-card p {
-    margin-bottom: 0.25rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.88rem;
 }
 
 .contact-alt {
@@ -1386,18 +1606,76 @@ a:hover {
 .footer {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 2rem 0;
+    padding: 2.5rem 0 2rem 0;
     text-align: center;
     border-top: 2px solid var(--silver);
 }
 
-.footer p {
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.footer-col {
+    min-width: 0;
+}
+
+.footer-col-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+    opacity: 0.95;
+}
+
+.footer-col-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-col-links li {
     margin-bottom: 0.5rem;
 }
 
+.footer-col-links a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.footer-col-links a:hover {
+    opacity: 0.85;
+}
+
+.footer-col-empty .footer-col-title {
+    opacity: 0.4;
+}
+
+.footer-col-empty .footer-col-links {
+    min-height: 1px;
+}
+
+.footer p {
+    margin-bottom: 0.35rem;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
 .footer-update {
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 0.75rem;
+    opacity: 0.75;
 }
 
 /* ===========================
@@ -1463,11 +1741,11 @@ a:hover {
         font-size: 3rem;
     }
     
-    .hero-links {
+    .hero-contact-row {
         justify-content: center;
     }
     
-    .social-links {
+    .hero-contact-row .social-links {
         justify-content: center;
     }
     
@@ -1498,6 +1776,21 @@ a:hover {
         left: 7px;
     }
     
+    .research-card {
+        flex-direction: column;
+    }
+    
+    .research-thumbnail {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+    }
+    
+    .hero-education {
+        margin-top: 1.5rem;
+    }
+    
     .skills-grid {
         grid-template-columns: 1fr;
     }
@@ -1526,7 +1819,7 @@ a:hover {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 60px;
         flex-direction: column;
         background-color: white;
         width: 100%;
@@ -1583,7 +1876,7 @@ a:hover {
     }
     
     .section {
-        padding: 4rem 0;
+        padding: 2.5rem 0;
     }
     
     .profile-placeholder {
@@ -1601,17 +1894,25 @@ a:hover {
     }
     
     .education-logo {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
     }
     
     .education-card {
-        padding: 2rem;
+        padding: 1.25rem;
     }
     
     .research-header {
         padding: 1.5rem;
         flex-direction: column;
+    }
+    
+    .research-content-wrapper {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    
+    .research-details-content {
+        padding: 0 0 1.5rem 0;
     }
     
     .activities-grid {
@@ -1621,6 +1922,32 @@ a:hover {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+    
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    
+    .image-lightbox.active {
+        padding: 1rem;
+    }
+    
+    .footer-cols {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-col-links {
+        font-size: 0.78rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1628,13 +1955,8 @@ a:hover {
         font-size: 2rem;
     }
     
-    .hero-links {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .btn {
-        width: 100%;
+    .hero-contact-row {
+        flex-wrap: wrap;
         justify-content: center;
     }
     
@@ -1664,8 +1986,7 @@ a:hover {
     .nav-menu,
     .hamburger,
     .scroll-indicator,
-    .hero-links,
-    .social-links {
+    .hero-contact-row {
         display: none;
     }
     
