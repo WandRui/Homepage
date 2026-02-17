@@ -123,6 +123,76 @@ a:hover {
    Layout
    =========================== */
 
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 60px);
+    margin-top: 60px;
+}
+
+.left-sidebar {
+    display: none; /* Hidden on mobile */
+    width: 320px;
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(209, 213, 219, 0.3);
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    padding: 2rem 1.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for sidebar */
+.left-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-sidebar::-webkit-scrollbar-track {
+    background: rgba(249, 250, 251, 0.5);
+    border-radius: 3px;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb {
+    background: var(--silver);
+    border-radius: 3px;
+    transition: background var(--transition-normal);
+}
+
+.left-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.right-content {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Desktop: Show sidebar and adjust right content */
+@media screen and (min-width: 1024px) {
+    .left-sidebar {
+        display: block;
+    }
+    
+    .right-content {
+        margin-left: 320px;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -167,7 +237,6 @@ a:hover {
     right: 0;
     bottom: 0;
     background: rgba(249, 250, 251, 0.3);
-    backdrop-filter: blur(5px);
     z-index: 0;
     pointer-events: none;
 }
@@ -225,7 +294,6 @@ a:hover {
     top: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     border-bottom: 1px solid var(--border-light);
     z-index: 1000;
@@ -316,7 +384,8 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     position: relative;
     background: transparent;
     overflow: hidden;
@@ -350,12 +419,20 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 0.67fr 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     position: relative;
     z-index: 1;
+}
+
+/* Desktop: Adjust hero content when sidebar is visible */
+@media screen and (min-width: 1024px) {
+    .hero-content {
+        text-align: left;
+        align-items: flex-start;
+    }
 }
 
 .hero-text {
@@ -503,6 +580,50 @@ a:hover {
     align-items: center;
     animation: fadeIn 1.5s ease;
     max-width: 280px;
+    width: 100%;
+}
+
+/* Mobile hero image (shown in hero section) */
+.hero-image-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease;
+    max-width: 280px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Hide mobile image on desktop */
+@media screen and (min-width: 1024px) {
+    .hero-image-mobile {
+        display: none;
+    }
+}
+
+/* Sidebar image styling */
+.left-sidebar .hero-image {
+    max-width: 100%;
+    width: 100%;
+}
+
+.left-sidebar .profile-photo {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 1.5rem;
+}
+
+.left-sidebar .hero-contact-row {
+    width: 100%;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(209, 213, 219, 0.3);
+}
+
+.left-sidebar .social-link-item {
+    background-color: rgba(249, 250, 251, 0.3);
+    border-color: rgba(229, 231, 235, 0.3);
 }
 
 .profile-placeholder {
@@ -556,7 +677,6 @@ a:hover {
     gap: 0.85rem;
     padding: 0.85rem;
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 2px solid var(--border-light);
     box-shadow: var(--shadow-sm);
@@ -626,7 +746,7 @@ a:hover {
    =========================== */
 
 .about-content {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -636,7 +756,6 @@ a:hover {
     position: relative;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
@@ -705,37 +824,17 @@ a:hover {
    News & Research Section (Side by Side)
    =========================== */
 
-.news-research-wrapper {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    margin-top: 2rem;
-}
-
-.news-column {
-    flex: 0 0 40%;
-    display: flex;
-    flex-direction: column;
-}
-
-.research-column {
-    flex: 0 0 60%;
-    display: flex;
-    flex-direction: column;
-}
-
 .news-scroll-window,
 .research-scroll-window {
-    height: 70vh;
-    min-height: 500px;
-    max-height: 800px;
+    height: 60vh;
+    min-height: 450px;
+    max-height: 700px;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 0.5rem;
     margin-top: 1rem;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
     box-shadow: var(--shadow-md);
     scroll-behavior: smooth;
@@ -764,29 +863,6 @@ a:hover {
 .news-scroll-window::-webkit-scrollbar-thumb:hover,
 .research-scroll-window::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
-}
-
-/* Section title adjustments for side-by-side layout */
-.news-column .section-title,
-.research-column .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    width: 100%;
-    display: block;
-}
-
-.news-column .section-title::after,
-.research-column .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-}
-
-.news-column .section-title::before,
-.research-column .section-title::before {
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 /* ===========================
@@ -848,7 +924,6 @@ a:hover {
 
 .news-item:hover {
     background: rgba(249, 250, 251, 0.9);
-    backdrop-filter: blur(15px);
 }
 
 .news-date {
@@ -910,7 +985,7 @@ a:hover {
    =========================== */
 
 .education-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -919,7 +994,6 @@ a:hover {
 
 .education-card {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
     border-radius: 12px;
     padding: 1.25rem;
@@ -985,7 +1059,6 @@ a:hover {
     object-fit: contain;
     flex-shrink: 0;
     background: rgba(249, 250, 251, 0.5);
-    backdrop-filter: blur(10px);
     padding: 0.5rem;
     border-radius: 10px;
     border: 1px solid var(--border-light);
@@ -1087,7 +1160,6 @@ a:hover {
 
 .research-card {
     background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
     border: 2px solid var(--border-light);
     border-radius: 14px;
     box-shadow: var(--shadow-md);
@@ -1358,7 +1430,7 @@ a:hover {
 }
 
 .skills-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1370,7 +1442,6 @@ a:hover {
 
 .skill-category {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     padding: 1.25rem;
     border: 1px solid var(--border-light);
     border-radius: 12px;
@@ -1477,14 +1548,13 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
     margin-bottom: 0;
-    max-width: 700px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .activity-card {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     padding: 1.25rem;
     border: 1px solid var(--border-light);
     border-radius: 10px;
@@ -1553,7 +1623,7 @@ a:hover {
 }
 
 .additional-info {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1603,7 +1673,7 @@ a:hover {
 }
 
 .contact-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -1623,7 +1693,6 @@ a:hover {
 
 .contact-card {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
     padding: 1.25rem 1rem;
     border: 1px solid var(--border-light);
     border-radius: 10px;
@@ -1798,19 +1867,15 @@ a:hover {
    Responsive Design
    =========================== */
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 1023px) {
+    /* Mobile: Show hero image in hero section */
     .hero-content {
-        grid-template-columns: 1fr;
         text-align: center;
     }
     
-    .hero-text {
-        order: 2;
-    }
-    
-    .hero-image {
-        order: 1;
+    .hero-image-mobile {
         margin-bottom: 2rem;
+        max-width: 100%;
     }
     
     .hero-title {
@@ -1824,13 +1889,11 @@ a:hover {
     .hero-contact-row .social-links {
         align-items: stretch;
     }
-    
-    .hero-image {
-        max-width: 100%;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 968px) {
+    .hero-title {
+        font-size: 3rem;
     }
     
     .education-card {
@@ -1947,6 +2010,25 @@ a:hover {
         font-size: 14px;
     }
     
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .left-sidebar {
+        display: none !important; /* Always hidden on mobile */
+    }
+    
+    .right-content {
+        margin-left: 0 !important;
+    }
+    
+    .hero-image-mobile {
+        display: flex !important;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -2007,28 +2089,11 @@ a:hover {
         grid-template-columns: 1fr;
     }
     
-    /* News & Research: Stack vertically on mobile */
-    .news-research-wrapper {
-        flex-direction: column;
-        gap: 2.5rem;
-    }
-    
-    .news-column,
-    .research-column {
-        flex: 1 1 100%;
-        width: 100%;
-    }
-    
     .news-scroll-window,
     .research-scroll-window {
         height: 50vh;
         min-height: 400px;
         max-height: 600px;
-    }
-    
-    .news-column .section-title,
-    .research-column .section-title {
-        font-size: 1.5rem;
     }
     
     .lightbox-close {

@@ -25,10 +25,11 @@
             <a href="#home" class="nav-logo">Rui Wang</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#news-research" class="nav-link">News & Research</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#activities" class="nav-link">Academic & Community Service</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#activities" class="nav-link">Activities</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -39,68 +40,104 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-image fade-in">
-                <img src="figures/photo2.png" alt="Rui Wang Profile Photo" class="profile-photo">
-                <div class="hero-contact-row">
-                    <span class="hero-contact-label">Contact me</span>
-                    <div class="social-links">
-                        <a href="mailto:rwangcn23@gmail.com" aria-label="Email" class="social-link-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                        <a href="https://x.com/wang_rui58298" target="_blank" aria-label="X" class="social-link-item">
-                            <i class="fab fa-x-twitter"></i>
-                            <span>X</span>
-                        </a>
-                        <a href="https://github.com/WandRui" target="_blank" aria-label="GitHub" class="social-link-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" aria-label="LinkedIn" class="social-link-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" aria-label="Google Scholar" class="social-link-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Google Scholar</span>
-                        </a>
+    <!-- Main Layout Container -->
+    <div class="main-layout">
+        <!-- Left Fixed Sidebar (Desktop Only) -->
+        <aside class="left-sidebar">
+            <div class="sidebar-content">
+                <div class="hero-image fade-in">
+                    <img src="figures/photo2.png" alt="Rui Wang Profile Photo" class="profile-photo">
+                    <div class="hero-contact-row">
+                        <span class="hero-contact-label">Contact me</span>
+                        <div class="social-links">
+                            <a href="mailto:rwangcn23@gmail.com" aria-label="Email" class="social-link-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://x.com/wang_rui58298" target="_blank" aria-label="X" class="social-link-item">
+                                <i class="fab fa-x-twitter"></i>
+                                <span>X</span>
+                            </a>
+                            <a href="https://github.com/WandRui" target="_blank" aria-label="GitHub" class="social-link-item">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" aria-label="LinkedIn" class="social-link-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" aria-label="Google Scholar" class="social-link-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Google Scholar</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-text fade-in">
-                <h1 class="hero-title">Rui Wang (王瑞)</h1>
-                <h2 class="hero-subtitle">Computer Science & Artificial Intelligence</h2>
-                <p class="hero-description">
-                    I am a third-year undergraduate student at <strong>The Hong Kong University of Science and Technology (HKUST)</strong>, 
-                    pursuing a Bachelor of Engineering in Computer Science with an Extended Major in Artificial Intelligence.
-                </p>
-                <p class="hero-description">
-                    My research interests lie in <strong>Large Language Models (LLMs)</strong>, including 
-                    LLM decision-making, uncertainty quantification, and Retrieval-Augmented Generation (RAG) systems. 
-                    Currently, I am interested in exploring related topics in agentic AI.
-                </p>
-                <p class="hero-description">
-                    Currently, I am on a semester exchange at <strong>The University of Texas at Austin</strong>, 
-                    where I am taking advanced courses in Software Engineering and Machine Learning for Edge AI.
-                </p>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#news-research">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </div>
-    </section>
+        </aside>
 
-    <!-- News & Research Section -->
-    <section id="news-research" class="section">
-        <div class="container">
-            <div class="news-research-wrapper">
-                <!-- News Column -->
-                <div class="news-column">
+        <!-- Right Scrollable Content Area -->
+        <main class="right-content">
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <!-- Mobile: Show image and contact in hero section -->
+                    <div class="hero-image-mobile fade-in">
+                        <img src="figures/photo2.png" alt="Rui Wang Profile Photo" class="profile-photo">
+                        <div class="hero-contact-row">
+                            <span class="hero-contact-label">Contact me</span>
+                            <div class="social-links">
+                                <a href="mailto:rwangcn23@gmail.com" aria-label="Email" class="social-link-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </a>
+                                <a href="https://x.com/wang_rui58298" target="_blank" aria-label="X" class="social-link-item">
+                                    <i class="fab fa-x-twitter"></i>
+                                    <span>X</span>
+                                </a>
+                                <a href="https://github.com/WandRui" target="_blank" aria-label="GitHub" class="social-link-item">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" aria-label="LinkedIn" class="social-link-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" aria-label="Google Scholar" class="social-link-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Google Scholar</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-text fade-in">
+                        <h1 class="hero-title">Rui Wang (王瑞)</h1>
+                        <h2 class="hero-subtitle">Computer Science & Artificial Intelligence</h2>
+                        <p class="hero-description">
+                            I am a third-year undergraduate student at <strong>The Hong Kong University of Science and Technology (HKUST)</strong>, 
+                            pursuing a Bachelor of Engineering in Computer Science with an Extended Major in Artificial Intelligence.
+                        </p>
+                        <p class="hero-description">
+                            My research interests lie in <strong>Large Language Models (LLMs)</strong>, including 
+                            LLM decision-making, uncertainty quantification, and Retrieval-Augmented Generation (RAG) systems. 
+                            Currently, I am interested in exploring related topics in agentic AI.
+                        </p>
+                        <p class="hero-description">
+                            Currently, I am on a semester exchange at <strong>The University of Texas at Austin</strong>, 
+                            where I am taking advanced courses in Software Engineering and Machine Learning for Edge AI.
+                        </p>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <a href="#news">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="section">
+                <div class="container">
                     <h2 class="section-title small">🔥 News</h2>
                     <div class="news-scroll-window">
                         <div class="news-container">
@@ -139,9 +176,11 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Research Column -->
-                <div class="research-column">
+            <!-- Research Section -->
+            <section id="research" class="section section-alt">
+                <div class="container">
                     <h2 class="section-title small">📝 Research</h2>
                     <div class="research-scroll-window">
                         <div class="research-container">
@@ -216,9 +255,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
     <!-- Education Section -->
     <section id="education" class="section section-alt">
@@ -285,9 +322,33 @@
         </div>
     </section>
 
+    <!-- Activities Section -->
+    <section id="activities" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title small">🌟 Academic & Community Service</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Teaching Assistant</h3>
+                    <p class="activity-subtitle">COMP1021: Intro to Computer Science</p>
+                    <p>Designed coding assignments and conducted tutorials for 50+ first-year undergraduates; received positive feedback for clarifying complex CS concepts</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Mentor</h3>
+                    <p class="activity-subtitle">CSE Peer Mentor Program</p>
+                    <p>Provided academic guidance and career planning advice to junior students, fostering a collaborative learning environment</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section section-alt">
+    <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title small">💻 Technical Skills</h2>
             <div class="skills-container">
@@ -346,75 +407,52 @@
         </div>
     </section>
 
-    <!-- Activities Section -->
-    <section id="activities" class="section">
-        <div class="container">
-            <h2 class="section-title small">🌟 Leadership & Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
+            <!-- Contact Section -->
+            <section id="contact" class="section section-alt">
+                <div class="container">
+                    <h2 class="section-title small">📬 Get In Touch</h2>
+                    <div class="contact-content">
+                        <p class="contact-intro">
+                            I am always open to discussing research opportunities and collaborations. Please feel free to reach out.
+                        </p>
+                        <div class="contact-grid">
+                            <a href="mailto:rwangcn23@gmail.com" class="contact-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>Email</h3>
+                                <p>rwangcn23@gmail.com</p>
+                                <p class="contact-alt">rwangcn@connect.ust.hk</p>
+                            </a>
+                            <a href="https://x.com/wang_rui58298" target="_blank" class="contact-card">
+                                <i class="fab fa-x-twitter"></i>
+                                <h3>X</h3>
+                                <p>@wang_rui58298</p>
+                            </a>
+                            <a href="https://github.com/WandRui" target="_blank" class="contact-card">
+                                <i class="fab fa-github"></i>
+                                <h3>GitHub</h3>
+                                <p>@WandRui</p>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" class="contact-card">
+                                <i class="fab fa-linkedin"></i>
+                                <h3>LinkedIn</h3>
+                                <p>Rui Wang</p>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" class="contact-card">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Google Scholar</h3>
+                                <p>View Publications</p>
+                            </a>
+                            <a href="https://xhslink.com/m/5JHvTzYzztv" target="_blank" class="contact-card">
+                                <i class="fas fa-book"></i>
+                                <h3>Red Note</h3>
+                                <p>View my life notes</p>
+                            </a>
+                        </div>
                     </div>
-                    <h3>Teaching Assistant</h3>
-                    <p class="activity-subtitle">COMP1021: Intro to Computer Science</p>
-                    <p>Designed coding assignments and conducted tutorials for 50+ first-year undergraduates; received positive feedback for clarifying complex CS concepts</p>
                 </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Mentor</h3>
-                    <p class="activity-subtitle">CSE Peer Mentor Program</p>
-                    <p>Provided academic guidance and career planning advice to junior students, fostering a collaborative learning environment</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title small">📬 Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">
-                    I am always open to discussing research opportunities and collaborations. Please feel free to reach out.
-                </p>
-                <div class="contact-grid">
-                    <a href="mailto:rwangcn23@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>rwangcn23@gmail.com</p>
-                        <p class="contact-alt">rwangcn@connect.ust.hk</p>
-                    </a>
-                    <a href="https://x.com/wang_rui58298" target="_blank" class="contact-card">
-                        <i class="fab fa-x-twitter"></i>
-                        <h3>X</h3>
-                        <p>@wang_rui58298</p>
-                    </a>
-                    <a href="https://github.com/WandRui" target="_blank" class="contact-card">
-                        <i class="fab fa-github"></i>
-                        <h3>GitHub</h3>
-                        <p>@WandRui</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <h3>LinkedIn</h3>
-                        <p>Rui Wang</p>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" class="contact-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Google Scholar</h3>
-                        <p>View Publications</p>
-                    </a>
-                    <a href="https://xhslink.com/m/5JHvTzYzztv" target="_blank" class="contact-card">
-                        <i class="fas fa-book"></i>
-                        <h3>Red Note</h3>
-                        <p>View my life notes</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </main>
+    </div>
 
     <!-- Image Lightbox -->
     <div class="image-lightbox" id="imageLightbox">

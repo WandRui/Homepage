@@ -16,6 +16,67 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// ===========================
+// Sidebar Footer Avoidance
+// ===========================
+
+const leftSidebar = document.querySelector('.left-sidebar');
+const footer = document.querySelector('.footer');
+
+function adjustSidebarForFooter() {
+    // Only adjust on desktop (when sidebar is visible)
+    if (!leftSidebar || window.innerWidth < 1024) {
+        if (leftSidebar) {
+            leftSidebar.style.transform = 'translateY(0)';
+        }
+        return;
+    }
+    
+    if (!footer) {
+        return;
+    }
+    
+    const navbarHeight = 60;
+    const footerRect = footer.getBoundingClientRect();
+    const footerTop = footerRect.top;
+    const viewportHeight = window.innerHeight;
+    const sidebarHeight = viewportHeight - navbarHeight;
+    
+    // When footer enters the viewport from bottom
+    if (footerTop < viewportHeight && footerTop > navbarHeight) {
+        // Calculate available space for sidebar (from navbar bottom to footer top)
+        const availableSpace = footerTop - navbarHeight;
+        
+        // If sidebar height exceeds available space, move it up
+        if (sidebarHeight > availableSpace) {
+            const moveUp = sidebarHeight - availableSpace;
+            leftSidebar.style.transform = `translateY(-${moveUp}px)`;
+            leftSidebar.style.transition = 'transform 0.3s ease-out';
+        } else {
+            leftSidebar.style.transform = 'translateY(0)';
+        }
+    } else {
+        // Reset when footer is below viewport
+        leftSidebar.style.transform = 'translateY(0)';
+    }
+}
+
+// Listen for scroll events (throttled for performance)
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = requestAnimationFrame(adjustSidebarForFooter);
+});
+
+// Also adjust on resize
+window.addEventListener('resize', adjustSidebarForFooter);
+// Initial adjustment after page load
+window.addEventListener('load', () => {
+    setTimeout(adjustSidebarForFooter, 100);
+});
+
 // Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 
