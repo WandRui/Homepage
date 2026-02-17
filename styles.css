@@ -351,7 +351,7 @@ a:hover {
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 0.67fr 1fr;
     gap: 3rem;
     align-items: center;
     position: relative;
@@ -393,28 +393,22 @@ a:hover {
 
 .hero-contact-row {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 0.85rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.6);
     border: 2px solid var(--border-light);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
-    width: fit-content;
+    width: 100%;
 }
 
 .hero-contact-label {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--primary-color);
-}
-
-.hero-contact-divider {
-    font-size: 1.1rem;
-    color: var(--border-color);
-    font-weight: 300;
-    user-select: none;
 }
 
 .btn {
@@ -457,29 +451,49 @@ a:hover {
 
 .social-links {
     display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+    align-items: stretch;
+    width: 100%;
 }
 
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.social-link-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
     background-color: var(--bg-alt);
     color: var(--accent-color);
     border: 2px solid var(--border-light);
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     transition: all var(--transition-normal);
+    text-decoration: none;
+    width: 100%;
 }
 
-.social-links a:hover {
+.social-link-item i {
+    font-size: 0.95rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.social-link-item span {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.social-link-item:hover {
     background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
     color: white;
     border-color: var(--accent-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+}
+
+.social-link-item:hover span {
+    color: white;
 }
 
 .hero-image {
@@ -488,6 +502,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     animation: fadeIn 1.5s ease;
+    max-width: 280px;
 }
 
 .profile-placeholder {
@@ -1803,11 +1818,19 @@ a:hover {
     }
     
     .hero-contact-row {
-        justify-content: center;
+        align-items: stretch;
     }
     
     .hero-contact-row .social-links {
-        justify-content: center;
+        align-items: stretch;
+    }
+    
+    .hero-image {
+        max-width: 100%;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
     }
     
     .education-card {
