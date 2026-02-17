@@ -25,9 +25,8 @@
             <a href="#home" class="nav-logo">Rui Wang</a>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="#news-research" class="nav-link">News & Research</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#activities" class="nav-link">Activities</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -104,47 +103,131 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <a href="#news">
+            <a href="#news-research">
                 <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="section">
+    <!-- News & Research Section -->
+    <section id="news-research" class="section">
         <div class="container">
-            <h2 class="section-title">🔥 News</h2>
-            <div class="news-container">
-                <div class="news-item">
-                    <div class="news-date">
-                        <span class="news-month">Jan</span>
-                        <span class="news-year">2026</span>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-icon">📄</span>
-                        One paper on confidence calibration in RAG systems submitted to ACL 2026.
-                        <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="news-link">[arXiv]</a>
+            <div class="news-research-wrapper">
+                <!-- News Column -->
+                <div class="news-column">
+                    <h2 class="section-title small">🔥 News</h2>
+                    <div class="news-scroll-window">
+                        <div class="news-container">
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="news-month">Jan</span>
+                                    <span class="news-year">2026</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-icon">📄</span>
+                                    One paper on confidence calibration in RAG systems submitted to ACL 2026.
+                                    <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="news-link">[arXiv]</a>
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="news-month">Jan</span>
+                                    <span class="news-year">2026</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-icon">✈️</span>
+                                    Started semester exchange at The University of Texas at Austin.
+                                </div>
+                            </div>
+                            <div class="news-item">
+                                <div class="news-date">
+                                    <span class="news-month">Aug</span>
+                                    <span class="news-year">2025</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-icon">📝</span>
+                                    One paper on LLM decision-making under epistemic uncertainty submitted to ACL 2026.
+                                    <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="news-link">[arXiv]</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">
-                        <span class="news-month">Jan</span>
-                        <span class="news-year">2026</span>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-icon">✈️</span>
-                        Started semester exchange at The University of Texas at Austin.
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">
-                        <span class="news-month">Aug</span>
-                        <span class="news-year">2025</span>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-icon">📝</span>
-                        One paper on LLM decision-making under epistemic uncertainty submitted to ACL 2026.
-                        <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="news-link">[arXiv]</a>
+
+                <!-- Research Column -->
+                <div class="research-column">
+                    <h2 class="section-title small">📝 Research</h2>
+                    <div class="research-scroll-window">
+                        <div class="research-container">
+                            <div class="research-timeline">
+                                <div class="research-item">
+                                    <div class="research-card" data-research-id="research-1">
+                                        <img src="figures/marpt_fig.png" alt="Revealing Instability of Decision-Making Research Figure" class="research-thumbnail">
+                                        <div class="research-content-wrapper">
+                                            <div class="research-header">
+                                                <div class="research-header-left">
+                                                    <div class="research-title-row">
+                                                        <h3 class="research-title">Revealing Instability of Decision-Making under Epistemic Uncertainty</h3>
+                                                        <i class="fas fa-chevron-down research-expand-icon"></i>
+                                                    </div>
+                                                    <div class="research-meta-row">
+                                                        <span class="research-status">Under Review (ACL)</span>
+                                                        <span class="research-date">Aug 2025</span>
+                                                    </div>
+                                                    <p class="research-role">First Author</p>
+                                                </div>
+                                            </div>
+                                            <div class="research-details">
+                                                <div class="research-details-content">
+                                                    <ul class="research-description">
+                                                        <li>Designed a three-stage experiment to evaluate LLM decision-making, benchmarking model behaviors against Prospect Theory axioms such as Loss Aversion and Asymmetric Risk Preferences</li>
+                                                        <li>Revealed that modeling these systems with economic frameworks is not consistently reliable, particularly under diverse linguistic forms, highlighting potential Model Risk and instability</li>
+                                                    </ul>
+                                                    <div class="research-links">
+                                                        <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
+                                                            <i class="fas fa-file-pdf"></i> arXiv Paper
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="research-item">
+                                    <div class="research-card" data-research-id="research-2">
+                                        <img src="figures/naacl_fig.png" alt="NAACL Framework Research Figure" class="research-thumbnail">
+                                        <div class="research-content-wrapper">
+                                            <div class="research-header">
+                                                <div class="research-header-left">
+                                                    <div class="research-title-row">
+                                                        <h3 class="research-title">Noise-Aware Verbal Confidence Calibration for LLMs in RAG Systems</h3>
+                                                        <i class="fas fa-chevron-down research-expand-icon"></i>
+                                                    </div>
+                                                    <div class="research-meta-row">
+                                                        <span class="research-status">Under Review (ACL)</span>
+                                                        <span class="research-date">Jan 2026</span>
+                                                    </div>
+                                                    <p class="research-role">Co-first Author</p>
+                                                </div>
+                                            </div>
+                                            <div class="research-details">
+                                                <div class="research-details-content">
+                                                    <ul class="research-description">
+                                                        <li>Developed NAACL, a framework that resolves RAG overconfidence by training models to explicitly discern retrieval noise and calibrate their verbal confidence</li>
+                                                    </ul>
+                                                    <div class="research-links">
+                                                        <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
+                                                            <i class="fas fa-file-pdf"></i> arXiv Paper
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,84 +299,6 @@
         </div>
     </section>
 
-    <!-- Research Section -->
-    <section id="research" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">📝 Research</h2>
-            <div class="research-container">
-                <div class="research-timeline">
-                    <div class="research-item">
-                        <div class="research-marker"></div>
-                        <div class="research-card" data-research-id="research-1">
-                            <img src="figures/marpt_fig.png" alt="Revealing Instability of Decision-Making Research Figure" class="research-thumbnail">
-                            <div class="research-content-wrapper">
-                                <div class="research-header">
-                                    <div class="research-header-left">
-                                        <div class="research-title-row">
-                                            <h3 class="research-title">Revealing Instability of Decision-Making under Epistemic Uncertainty</h3>
-                                            <i class="fas fa-chevron-down research-expand-icon"></i>
-                                        </div>
-                                        <div class="research-meta-row">
-                                            <span class="research-status">Under Review (ACL)</span>
-                                            <span class="research-date">Aug 2025</span>
-                                        </div>
-                                        <p class="research-role">First Author</p>
-                                    </div>
-                                </div>
-                                <div class="research-details">
-                                    <div class="research-details-content">
-                                        <ul class="research-description">
-                                            <li>Designed a three-stage experiment to evaluate LLM decision-making, benchmarking model behaviors against Prospect Theory axioms such as Loss Aversion and Asymmetric Risk Preferences</li>
-                                            <li>Revealed that modeling these systems with economic frameworks is not consistently reliable, particularly under diverse linguistic forms, highlighting potential Model Risk and instability</li>
-                                        </ul>
-                                        <div class="research-links">
-                                            <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
-                                                <i class="fas fa-file-pdf"></i> arXiv Paper
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="research-item">
-                        <div class="research-marker"></div>
-                        <div class="research-card" data-research-id="research-2">
-                            <img src="figures/naacl_fig.png" alt="NAACL Framework Research Figure" class="research-thumbnail">
-                            <div class="research-content-wrapper">
-                                <div class="research-header">
-                                    <div class="research-header-left">
-                                        <div class="research-title-row">
-                                            <h3 class="research-title">Noise-Aware Verbal Confidence Calibration for LLMs in RAG Systems</h3>
-                                            <i class="fas fa-chevron-down research-expand-icon"></i>
-                                        </div>
-                                        <div class="research-meta-row">
-                                            <span class="research-status">Under Review (ACL)</span>
-                                            <span class="research-date">Jan 2026</span>
-                                        </div>
-                                        <p class="research-role">Co-first Author</p>
-                                    </div>
-                                </div>
-                                <div class="research-details">
-                                    <div class="research-details-content">
-                                        <ul class="research-description">
-                                            <li>Developed NAACL, a framework that resolves RAG overconfidence by training models to explicitly discern retrieval noise and calibrate their verbal confidence</li>
-                                        </ul>
-                                        <div class="research-links">
-                                            <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
-                                                <i class="fas fa-file-pdf"></i> arXiv Paper
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section section-alt">
