@@ -380,11 +380,11 @@ a:hover {
    =========================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
     position: relative;
     background: transparent;
@@ -461,11 +461,25 @@ a:hover {
     line-height: 1.65;
     color: var(--text-color);
     margin-bottom: 0.85rem;
-    max-width: 600px;
+    max-width: 750px;
 }
 
 .hero-description:last-of-type {
     margin-bottom: 1.5rem;
+}
+
+.hero-interests {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-color);
+    margin-bottom: 0.85rem;
+    max-width: 750px;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.hero-interests li {
+    margin-bottom: 0.45rem;
 }
 
 .hero-contact-row {
@@ -1261,19 +1275,6 @@ a:hover {
     min-width: 0;
 }
 
-.research-card::before {
-    content: '📌';
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-}
-
-.research-card:hover::before {
-    opacity: 0.3;
-}
 
 .research-card:hover {
     box-shadow: var(--shadow-lg);
