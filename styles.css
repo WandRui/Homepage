@@ -1142,6 +1142,15 @@ a:hover {
     flex-shrink: 0;
 }
 
+.education-detail-item a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.education-detail-item a:hover {
+    text-decoration: underline;
+}
+
 .education-detail-label {
     font-weight: 600;
     color: var(--primary-color);
