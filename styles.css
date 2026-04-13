@@ -131,7 +131,7 @@ a:hover {
 
 .left-sidebar {
     display: none; /* Hidden on mobile */
-    width: 320px;
+    width: 290px;
     flex-shrink: 0;
     position: fixed;
     left: 0;
@@ -189,7 +189,7 @@ a:hover {
     }
     
     .right-content {
-        margin-left: 320px;
+        margin-left: 290px;
     }
 }
 
@@ -922,7 +922,9 @@ a:hover {
     font-weight: 600;
     text-decoration: none;
     transition: all var(--transition-fast);
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .news-link:hover {
