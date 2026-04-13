@@ -138,21 +138,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ===========================
-// Research Section - Expandable Cards
-// ===========================
-
-document.querySelectorAll('.research-card').forEach(card => {
-    card.addEventListener('click', function(e) {
-        // Don't toggle if clicking on a link or image
-        if (e.target.tagName === 'A' || e.target.closest('a') || 
-            e.target.classList.contains('research-thumbnail')) {
-            return;
-        }
-        
-        this.classList.toggle('expanded');
-    });
-});
 
 // ===========================
 // Image Lightbox
@@ -278,25 +263,6 @@ skillTags.forEach(tag => {
 // Research Card Expansion (Optional)
 // ===========================
 
-// ===========================
-// Research Card Interaction
-// ===========================
-
-const researchCards = document.querySelectorAll('.research-card');
-
-researchCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        if (!card.classList.contains('expanded')) {
-            card.style.transform = 'translateY(-4px)';
-        }
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        if (!card.classList.contains('expanded')) {
-            card.style.transform = 'translateY(0)';
-        }
-    });
-});
 
 // ===========================
 // Scroll Progress Indicator
