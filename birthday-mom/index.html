@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6c7a4" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <title>妈妈，生日快乐</title>
+    <style>
+      :root {
+        --bg-top: #fff7ef;
+        --bg-middle: #ffd9bf;
+        --bg-bottom: #f4a978;
+        --card: rgba(255, 251, 246, 0.9);
+        --card-strong: rgba(255, 248, 240, 0.98);
+        --ink: #6b3a27;
+        --soft-ink: #8a5a45;
+        --gold: #d98b2b;
+        --rose: #d97876;
+        --shadow: 0 22px 60px rgba(125, 72, 33, 0.18);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.92), transparent 36%),
+          linear-gradient(180deg, var(--bg-top) 0%, var(--bg-middle) 52%, var(--bg-bottom) 100%);
+        overflow-x: hidden;
+      }
+
+      .scene {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: max(24px, env(safe-area-inset-top)) 18px max(28px, env(safe-area-inset-bottom));
+        isolation: isolate;
+      }
+
+      .glow,
+      .glow::before,
+      .glow::after {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(12px);
+        z-index: -2;
+      }
+
+      .glow {
+        inset: auto auto 10% 50%;
+        width: 62vw;
+        height: 62vw;
+        max-width: 320px;
+        max-height: 320px;
+        background: rgba(255, 249, 216, 0.42);
+        transform: translateX(-50%);
+      }
+
+      .glow::before,
+      .glow::after {
+        content: "";
+      }
+
+      .glow::before {
+        width: 180px;
+        height: 180px;
+        top: -120px;
+        left: -40px;
+        background: rgba(255, 206, 179, 0.4);
+      }
+
+      .glow::after {
+        width: 140px;
+        height: 140px;
+        right: -60px;
+        bottom: -40px;
+        background: rgba(255, 237, 176, 0.38);
+      }
+
+      .petals {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .petal {
+        position: absolute;
+        top: -14vh;
+        width: 14px;
+        height: 20px;
+        border-radius: 70% 0 70% 0;
+        background: linear-gradient(180deg, rgba(255, 245, 238, 0.95), rgba(222, 126, 124, 0.82));
+        opacity: 0.72;
+        animation: drift linear infinite;
+        box-shadow: 0 6px 18px rgba(160, 80, 74, 0.18);
+      }
+
+      .petal:nth-child(1) {
+        left: 7%;
+        animation-duration: 14s;
+        animation-delay: -1s;
+      }
+
+      .petal:nth-child(2) {
+        left: 22%;
+        width: 10px;
+        height: 16px;
+        animation-duration: 18s;
+        animation-delay: -8s;
+      }
+
+      .petal:nth-child(3) {
+        left: 39%;
+        animation-duration: 12s;
+        animation-delay: -5s;
+      }
+
+      .petal:nth-child(4) {
+        left: 58%;
+        width: 16px;
+        height: 22px;
+        animation-duration: 16s;
+        animation-delay: -11s;
+      }
+
+      .petal:nth-child(5) {
+        left: 74%;
+        animation-duration: 13s;
+        animation-delay: -3s;
+      }
+
+      .petal:nth-child(6) {
+        left: 88%;
+        width: 11px;
+        height: 17px;
+        animation-duration: 19s;
+        animation-delay: -6s;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+        35% {
+          transform: translate3d(18px, 32vh, 0) rotate(120deg);
+        }
+        70% {
+          transform: translate3d(-22px, 68vh, 0) rotate(250deg);
+        }
+        100% {
+          transform: translate3d(12px, 118vh, 0) rotate(360deg);
+        }
+      }
+
+      .card {
+        width: min(100%, 420px);
+        position: relative;
+        padding: 18px;
+      }
+
+      .card-shell {
+        position: relative;
+        padding: 18px;
+        border-radius: calc(var(--radius) + 8px);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(255, 236, 222, 0.22)),
+          rgba(255, 255, 255, 0.24);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .card-shell::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(217, 139, 43, 0.22);
+        pointer-events: none;
+      }
+
+      .bouquet {
+        position: relative;
+        height: 142px;
+        margin: 4px 0 10px;
+      }
+
+      .flower {
+        position: absolute;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 42% 38%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 34%),
+          radial-gradient(circle at center, var(--rose), #d65f7b 58%, #b64559 100%);
+        box-shadow: 0 10px 24px rgba(163, 76, 84, 0.22);
+      }
+
+      .flower::before,
+      .flower::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+      }
+
+      .flower::before {
+        transform: rotate(45deg);
+        background: inherit;
+      }
+
+      .flower::after {
+        inset: 32%;
+        background: radial-gradient(circle, #ffe7a2 0%, #f0b04c 70%, #e28f33 100%);
+      }
+
+      .flower-a {
+        width: 72px;
+        height: 72px;
+        left: 36px;
+        top: 32px;
+      }
+
+      .flower-b {
+        width: 92px;
+        height: 92px;
+        left: 120px;
+        top: 6px;
+      }
+
+      .flower-c {
+        width: 70px;
+        height: 70px;
+        right: 44px;
+        top: 36px;
+      }
+
+      .bud {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ffe7f1, #e28b8f 72%, #c7686d 100%);
+      }
+
+      .bud-1 {
+        left: 96px;
+        top: 82px;
+      }
+
+      .bud-2 {
+        right: 92px;
+        top: 82px;
+      }
+
+      .stem {
+        position: absolute;
+        width: 3px;
+        background: linear-gradient(180deg, #8fa96f, #567046);
+        border-radius: 999px;
+        bottom: 8px;
+        transform-origin: top center;
+      }
+
+      .stem-1 {
+        height: 74px;
+        left: 74px;
+        transform: rotate(12deg);
+      }
+
+      .stem-2 {
+        height: 84px;
+        left: 166px;
+      }
+
+      .stem-3 {
+        height: 70px;
+        right: 82px;
+        transform: rotate(-10deg);
+      }
+
+      .leaf {
+        position: absolute;
+        width: 26px;
+        height: 18px;
+        border-radius: 100% 0;
+        background: linear-gradient(135deg, #7d9c62, #5d7b47);
+      }
+
+      .leaf-1 {
+        left: 62px;
+        bottom: 34px;
+        transform: rotate(-18deg);
+      }
+
+      .leaf-2 {
+        left: 177px;
+        bottom: 28px;
+        transform: rotate(24deg);
+      }
+
+      .leaf-3 {
+        right: 68px;
+        bottom: 38px;
+        transform: rotate(168deg);
+      }
+
+      .seal {
+        margin: 0 auto 12px;
+        width: 86px;
+        height: 86px;
+        border: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0) 30%),
+          linear-gradient(160deg, #f0a56f, #d97b52 72%, #bb5b39);
+        color: #fff9f2;
+        font-family: "Kaiti SC", "STKaiti", serif;
+        font-size: 18px;
+        letter-spacing: 2px;
+        box-shadow:
+          0 10px 22px rgba(168, 74, 39, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: transform 240ms ease, box-shadow 240ms ease;
+      }
+
+      .seal:active {
+        transform: scale(0.98);
+      }
+
+      .content {
+        position: relative;
+        padding: 24px 22px 20px;
+        border-radius: var(--radius);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 249, 242, 0.94)),
+          var(--card);
+        transform-origin: top center;
+        transform: translateY(12px) scale(0.985);
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          opacity 520ms ease,
+          transform 520ms ease,
+          max-height 520ms ease;
+      }
+
+      .card.open .content {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        max-height: 720px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--gold);
+        font-size: 13px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 10px;
+        font-family: "Iowan Old Style", "Palatino Linotype", "Kaiti SC",
+          "STKaiti", serif;
+        font-size: clamp(34px, 9vw, 44px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        margin: 0 0 18px;
+        color: var(--soft-ink);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .message {
+        margin: 0;
+        padding: 18px 18px 16px;
+        border-radius: 22px;
+        background: rgba(255, 243, 232, 0.85);
+        color: #7a4632;
+        font-size: 16px;
+        line-height: 1.9;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+
+      .message strong {
+        color: #b5554e;
+        font-weight: 700;
+      }
+
+      .wish-box {
+        margin-top: 16px;
+        padding: 16px 16px 14px;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(255, 244, 235, 0.96));
+        border: 1px solid rgba(217, 139, 43, 0.14);
+      }
+
+      .wish-label {
+        margin: 0 0 8px;
+        color: var(--gold);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+      }
+
+      .wish-text {
+        margin: 0;
+        min-height: 52px;
+        font-size: 15px;
+        line-height: 1.8;
+        color: #7a4d3d;
+        transition: opacity 200ms ease, transform 200ms ease;
+      }
+
+      .wish-text.switching {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .action-btn {
+        flex: 1;
+        appearance: none;
+        border: 0;
+        min-height: 46px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .action-primary {
+        background: linear-gradient(160deg, #f3b16f, #dd8559);
+        color: #fffaf4;
+        box-shadow: 0 10px 20px rgba(181, 97, 53, 0.2);
+      }
+
+      .action-secondary {
+        background: rgba(255, 244, 235, 0.92);
+        color: var(--soft-ink);
+        border: 1px solid rgba(171, 98, 68, 0.14);
+      }
+
+      .signoff {
+        margin: 18px 0 2px;
+        text-align: center;
+        color: #925f4b;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+      }
+
+      .spark {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 245, 201, 0.9);
+        box-shadow: 0 0 20px rgba(255, 239, 184, 0.8);
+        animation: twinkle 2.8s ease-in-out infinite;
+      }
+
+      .spark-1 {
+        top: 52px;
+        right: 24px;
+      }
+
+      .spark-2 {
+        top: 112px;
+        left: 28px;
+        animation-delay: -1.2s;
+      }
+
+      .spark-3 {
+        top: 168px;
+        right: 68px;
+        animation-delay: -2.1s;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(0.7);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.14);
+        }
+      }
+
+      @media (min-width: 640px) {
+        .scene {
+          padding-inline: 24px;
+        }
+
+        .card {
+          width: 420px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .petal,
+        .spark,
+        .content,
+        .wish-text,
+        .seal {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="scene">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="petals" aria-hidden="true">
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+      </div>
+
+      <section class="card" id="card">
+        <div class="card-shell">
+          <span class="spark spark-1" aria-hidden="true"></span>
+          <span class="spark spark-2" aria-hidden="true"></span>
+          <span class="spark spark-3" aria-hidden="true"></span>
+
+          <div class="bouquet" aria-hidden="true">
+            <span class="flower flower-a"></span>
+            <span class="flower flower-b"></span>
+            <span class="flower flower-c"></span>
+            <span class="bud bud-1"></span>
+            <span class="bud bud-2"></span>
+            <span class="stem stem-1"></span>
+            <span class="stem stem-2"></span>
+            <span class="stem stem-3"></span>
+            <span class="leaf leaf-1"></span>
+            <span class="leaf leaf-2"></span>
+            <span class="leaf leaf-3"></span>
+          </div>
+
+          <button class="seal" id="openButton" type="button" aria-expanded="false">
+            开启<br />祝福
+          </button>
+
+          <article class="content" id="content">
+            <p class="eyebrow">HAPPY BIRTHDAY</p>
+            <h1>妈妈，<br />生日快乐</h1>
+            <p class="subtitle">
+              想把今天的温柔、感谢和祝福，都轻轻地送到你手里。
+            </p>
+
+            <p class="message">
+              谢谢你一直以来的照顾和陪伴。愿你在新的一岁里
+              <strong>平安顺心、笑容常在</strong>，每一天都被温暖的小事包围。
+              我会一直记得你的爱，也希望以后能把更多的爱慢慢还给你。
+            </p>
+
+            <div class="wish-box">
+              <p class="wish-label">今日小祝愿</p>
+              <p class="wish-text" id="wishText">
+                愿你三餐四季从容安稳，眼里有光，心里有暖。
+              </p>
+            </div>
+
+            <div class="actions">
+              <button class="action-btn action-primary" id="nextWish" type="button">
+                再看一句
+              </button>
+              <button class="action-btn action-secondary" id="replay" type="button">
+                重温一下
+              </button>
+            </div>
+
+            <p class="signoff">爱你的孩子</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const wishes = [
+        "愿你三餐四季从容安稳，眼里有光，心里有暖。",
+        "愿往后的日子多一点轻松，少一点操劳，所想皆有回应。",
+        "愿你被岁月温柔相待，也被家人的爱紧紧环绕。",
+        "愿每一个普通的清晨和傍晚，都因为平安健康而闪闪发亮。 "
+      ];
+
+      const card = document.getElementById("card");
+      const openButton = document.getElementById("openButton");
+      const nextWishButton = document.getElementById("nextWish");
+      const replayButton = document.getElementById("replay");
+      const wishText = document.getElementById("wishText");
+
+      let wishIndex = 0;
+
+      function showWish(index) {
+        wishText.classList.add("switching");
+        window.setTimeout(() => {
+          wishText.textContent = wishes[index];
+          wishText.classList.remove("switching");
+        }, 180);
+      }
+
+      function openCard() {
+        card.classList.add("open");
+        openButton.setAttribute("aria-expanded", "true");
+        openButton.innerHTML = "生日<br />快乐";
+      }
+
+      openButton.addEventListener("click", openCard);
+
+      nextWishButton.addEventListener("click", () => {
+        wishIndex = (wishIndex + 1) % wishes.length;
+        showWish(wishIndex);
+      });
+
+      replayButton.addEventListener("click", () => {
+        wishIndex = 0;
+        openCard();
+        showWish(wishIndex);
+        document.getElementById("content").scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+      });
+    </script>
+  </body>
+</html>
