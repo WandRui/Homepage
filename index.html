@@ -19,28 +19,6 @@
     <!-- Animated Background -->
     <div id="particles-js"></div>
     
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Rui Wang</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#news" class="nav-link">News</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#internships" class="nav-link">Internships</a></li>
-                <li><a href="#activities" class="nav-link">Services</a></li>
-                <!-- <li><a href="#skills" class="nav-link">Skills</a></li> -->
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
     <!-- Main Layout Container -->
     <div class="main-layout">
         <!-- Left Fixed Sidebar (Desktop Only) -->
@@ -48,31 +26,15 @@
             <div class="sidebar-content">
                 <div class="hero-image fade-in">
                     <img src="figures/photo2.png" alt="Rui Wang Profile Photo" class="profile-photo">
-                    <div class="hero-contact-row">
-                        <span class="hero-contact-label">Contact me</span>
-                        <div class="social-links">
-                            <a href="mailto:rwangcn23@gmail.com" aria-label="Email" class="social-link-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>Email</span>
-                            </a>
-                            <a href="https://x.com/wang_rui58298" target="_blank" aria-label="X" class="social-link-item">
-                                <i class="fab fa-x-twitter"></i>
-                                <span>X</span>
-                            </a>
-                            <a href="https://github.com/WandRui" target="_blank" aria-label="GitHub" class="social-link-item">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/rui-wang-39900537a/" target="_blank" aria-label="LinkedIn" class="social-link-item">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=2zU0cUQAAAAJ" target="_blank" aria-label="Google Scholar" class="social-link-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Google Scholar</span>
-                            </a>
-                        </div>
-                    </div>
+                    <ul class="sidebar-nav">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#news" class="nav-link">News</a></li>
+                        <li><a href="#research" class="nav-link">Research</a></li>
+                        <li><a href="#education" class="nav-link">Education</a></li>
+                        <li><a href="#internships" class="nav-link">Internships</a></li>
+                        <li><a href="#activities" class="nav-link">Services</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </aside>
@@ -92,7 +54,7 @@
                                     <i class="fas fa-envelope"></i>
                                     <span>Email</span>
                                 </a>
-                                <a href="https://x.com/wang_rui58298" target="_blank" aria-label="X" class="social-link-item">
+                                <a href="https://x.com/RuiWangRory" target="_blank" aria-label="X" class="social-link-item">
                                     <i class="fab fa-x-twitter"></i>
                                     <span>X</span>
                                 </a>
@@ -119,18 +81,18 @@
                             pursuing a Bachelor of Engineering in Computer Science with an Extended Major in Artificial Intelligence.
                             I completed a semester exchange at <a href="https://www.utexas.edu" target="_blank" class="news-link"><strong>The University of Texas at Austin (UT Austin)</strong></a> in May 2026.
                             I am currently working at <a href="https://www.aqumon.com/en/" target="_blank" class="news-link"><strong>AQUMON</strong></a> (Shenzhen) as an <strong>AI Large Language Model Research Intern</strong> through the <strong>HKUST CSE Co-op Program</strong>.
+                            I am also an incoming PhD student of Professor <a href="https://www.cse.ust.hk/~yqsong/" target="_blank" class="news-link"><strong>Yangqiu Song</strong></a> at CSE, HKUST.
                         </p>
                         <p class="hero-description">
                             My research interests broadly lie in <strong>Large Language Models (LLMs)</strong> and their reasoning capabilities. Specifically, I focus on:
                         </p>
                         <ul class="hero-interests">
-                            <li><strong>LLM Decision-making</strong></li>
-                            <li><strong>Uncertainty Quantification</strong> and Confidence Calibration</li>
-                            <li><strong>RAG Robustness</strong></li>
-                            <li><strong>Rule Induction</strong></li>
+                            <li><strong>Decisions under risk and uncertainty</strong></li>
+                            <li><strong>Confidence calibration</strong></li>
+                            <li><strong>Robustness and adaptability</strong></li>
                         </ul>
                         <p class="hero-description">
-                            Feel free to reach out - my contact information is available in the sidebar.
+                            Feel free to reach out.
                         </p>
                     </div>
                 </div>
@@ -221,7 +183,14 @@
                             <div class="research-timeline">
                                 <div class="research-item">
                                     <div class="research-card" data-research-id="research-1">
-                                        <img src="figures/planBench.png" alt="PlanBench-XL Research Figure" class="research-thumbnail">
+                                        <div class="research-figure-col">
+                                            <img src="figures/planBench.png" alt="PlanBench-XL Research Figure" class="research-thumbnail">
+                                            <div class="research-links">
+                                                <a href="https://arxiv.org/abs/2606.22388" target="_blank" class="research-link">
+                                                    <i class="fas fa-file-pdf"></i> Preprint
+                                                </a>
+                                            </div>
+                                        </div>
                                         <div class="research-content-wrapper">
                                             <div class="research-header">
                                                 <div class="research-header-left">
@@ -237,15 +206,7 @@
                                             </div>
                                             <div class="research-details">
                                                 <div class="research-details-content">
-                                                    <ul class="research-description">
-                                                        <li>Introduced <strong>PlanBench-XL</strong>, an interactive benchmark with <strong>327 retail tasks</strong> and <strong>1,665 tools</strong> for evaluating long-horizon planning under retrieval-limited tool visibility</li>
-                                                        <li>Showed that even leading models struggle to adapt when tool paths are blocked, highlighting major weaknesses in <strong>robust agentic planning</strong> for large, imperfect tool ecosystems</li>
-                                                    </ul>
-                                                    <div class="research-links">
-                                                        <a href="https://arxiv.org/abs/2606.22388" target="_blank" class="research-link">
-                                                            <i class="fas fa-file-pdf"></i> arXiv Paper
-                                                        </a>
-                                                    </div>
+                                                    <p class="research-tldr"><strong>TL;DR:</strong> PlanBench-XL is an interactive benchmark with 327 retail tasks and 1,665 tools, showing that even leading LLM agents struggle with long-horizon planning in large, imperfect tool ecosystems.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -254,7 +215,14 @@
 
                                 <div class="research-item">
                                     <div class="research-card" data-research-id="research-2">
-                                        <img src="figures/marpt_fig.png" alt="Rethinking Prospect Theory for LLMs Research Figure" class="research-thumbnail">
+                                        <div class="research-figure-col">
+                                            <img src="figures/marpt_fig.png" alt="Rethinking Prospect Theory for LLMs Research Figure" class="research-thumbnail">
+                                            <div class="research-links">
+                                                <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
+                                                    <i class="fas fa-file-pdf"></i> Preprint
+                                                </a>
+                                            </div>
+                                        </div>
                                         <div class="research-content-wrapper">
                                             <div class="research-header">
                                                 <div class="research-header-left">
@@ -262,7 +230,7 @@
                                                         <h3 class="research-title">Rethinking Prospect Theory for LLMs: Revealing the Instability of Decision-Making under Epistemic Uncertainty</h3>
                                                     </div>
                                                     <div class="research-meta-row">
-                                                        <span class="research-status">Under Review (COLM 2026)</span>
+                                                        <span class="research-status">Under Review</span>
                                                         <span class="research-date">Apr 2026</span>
                                                     </div>
                                                     <p class="research-role"><span class="self-author">Rui Wang</span>, Qihan Lin, Jiayu Liu, Qing Zong, Tianshi Zheng, Dadi Guo, Haochen Shi, Weiqi Wang, Yangqiu Song</p>
@@ -270,15 +238,7 @@
                                             </div>
                                             <div class="research-details">
                                                 <div class="research-details-content">
-                                                    <ul class="research-description">
-                                                        <li>Designed a <strong>three-stage workflow</strong> to evaluate <strong>LLM decision-making</strong> under uncertainty, estimating <strong>Prospect Theory</strong> parameters and testing whether the framework meaningfully fits model behavior</li>
-                                                        <li>Showed that <strong>Prospect Theory</strong> is not consistently reliable for interpreting LLMs, and that the inferred behavior is especially unstable under <strong>epistemic uncertainty</strong> expressed through linguistic markers</li>
-                                                    </ul>
-                                                    <div class="research-links">
-                                                        <a href="https://arxiv.org/abs/2508.08992" target="_blank" class="research-link">
-                                                            <i class="fas fa-file-pdf"></i> arXiv Paper
-                                                        </a>
-                                                    </div>
+                                                    <p class="research-tldr"><strong>TL;DR:</strong> A three-stage evaluation grounded in Prospect Theory shows that LLM decision-making is not reliably described by the framework and becomes especially unstable under epistemic uncertainty.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -287,7 +247,14 @@
 
                                 <div class="research-item">
                                     <div class="research-card" data-research-id="research-3">
-                                        <img src="figures/naacl_fig.png" alt="NOVA Research Figure" class="research-thumbnail">
+                                        <div class="research-figure-col">
+                                            <img src="figures/naacl_fig.png" alt="NOVA Research Figure" class="research-thumbnail">
+                                            <div class="research-links">
+                                                <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
+                                                    <i class="fas fa-file-pdf"></i> Preprint
+                                                </a>
+                                            </div>
+                                        </div>
                                         <div class="research-content-wrapper">
                                             <div class="research-header">
                                                 <div class="research-header-left">
@@ -295,7 +262,7 @@
                                                         <h3 class="research-title">NOVA: NOise-aware Verbal Confidence CAlibration for Robust Large Language Models in RAG Systems</h3>
                                                     </div>
                                                     <div class="research-meta-row">
-                                                        <span class="research-status">Under Review (ACL 2026)</span>
+                                                        <span class="research-status">Under Review</span>
                                                         <span class="research-date">Jan 2026</span>
                                                     </div>
                                                     <p class="research-role">Jiayu Liu, <span class="self-author">Rui Wang</span>, Qing Zong, Yumeng Wang, Cheng Qian, Qingcheng Zeng, Tianshi Zheng, Haochen Shi, Dadi Guo, Baixuan Xu, Chunyang Li, Yangqiu Song</p>
@@ -303,15 +270,7 @@
                                             </div>
                                             <div class="research-details">
                                                 <div class="research-details-content">
-                                                    <ul class="research-description">
-                                                        <li>Proposed <strong>NOVA</strong>, a noise-aware verbal confidence calibration framework for <strong>RAG systems</strong> that improves reliability when retrieved evidence is contradictory or irrelevant</li>
-                                                        <li>Built supervision from <strong>NOVA Rules</strong> and showed strong improvements in <strong>expected calibration error</strong> across both in-domain and out-of-domain settings</li>
-                                                    </ul>
-                                                    <div class="research-links">
-                                                        <a href="https://arxiv.org/abs/2601.11004" target="_blank" class="research-link">
-                                                            <i class="fas fa-file-pdf"></i> arXiv Paper
-                                                        </a>
-                                                    </div>
+                                                    <p class="research-tldr"><strong>TL;DR:</strong> NOVA is a noise-aware verbal confidence calibration framework that substantially improves the reliability of RAG systems when retrieved evidence is contradictory or irrelevant.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -525,10 +484,10 @@
                                 <h3>Email</h3>
                                 <div class="contact-text"><p>rwangcn23@gmail.com</p><p class="contact-alt">rwangcn@connect.ust.hk</p></div>
                             </a>
-                            <a href="https://x.com/wang_rui58298" target="_blank" class="contact-card">
+                            <a href="https://x.com/RuiWangRory" target="_blank" class="contact-card">
                                 <i class="fab fa-x-twitter"></i>
                                 <h3>X</h3>
-                                <div class="contact-text"><p>@wang_rui58298</p></div>
+                                <div class="contact-text"><p>@RuiWangRory</p></div>
                             </a>
                             <a href="https://github.com/WandRui" target="_blank" class="contact-card">
                                 <i class="fab fa-github"></i>
@@ -570,18 +529,11 @@
         <div class="container">
             <div class="footer-cols">
                 <div class="footer-col">
-                    <h3 class="footer-col-title">Useful Tools</h3>
-                    <ul class="footer-col-links">
-                        <li><a href="https://asta.allen.ai/" target="_blank">ASTA</a> — AI2 research assistant for papers & benchmarks</li>
-                        <li><a href="https://www.alphaxiv.org/" target="_blank">alphaXiv</a> — Explore cutting-edge AI research</li>
-                        <li><a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a> — Build with Google AI models</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
                     <h3 class="footer-col-title">My Collaborators</h3>
                     <ul class="footer-col-links">
                         <li><a href="https://jiayujeff.github.io/" target="_blank">Jiayu LIU 刘家毓</a></li>
                         <li><a href="https://zongqing0068.github.io/" target="_blank">Qing ZONG 宗晴</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=ceOc52QAAAAJ" target="_blank">Qihan LIN 林绮涵</a></li>
                     </ul>
                 </div>
                 <div class="footer-col footer-col-empty">

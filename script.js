@@ -2,19 +2,7 @@
 // Navigation Functionality
 // ===========================
 
-const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-// Sticky navbar on scroll
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
 
 // ===========================
 // Sidebar Footer Avoidance
@@ -36,7 +24,7 @@ function adjustSidebarForFooter() {
         return;
     }
     
-    const navbarHeight = 60;
+    const navbarHeight = 0;
     const footerRect = footer.getBoundingClientRect();
     const footerTop = footerRect.top;
     const viewportHeight = window.innerHeight;
@@ -109,33 +97,12 @@ navLinks.forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 60;
             window.scrollTo({
-                top: offsetTop,
+                top: targetSection.offsetTop,
                 behavior: 'smooth'
             });
         }
-        
-        // Close mobile menu if open
-        if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
     });
-});
-
-// Hamburger menu toggle
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    }
 });
 
 
@@ -220,7 +187,7 @@ if (scrollIndicator) {
         e.preventDefault();
         const targetSection = document.querySelector('#news');
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 60;
+            const offsetTop = targetSection.offsetTop;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -273,7 +240,7 @@ const createScrollProgress = () => {
     progressBar.id = 'scroll-progress';
     progressBar.style.cssText = `
         position: fixed;
-        top: 60px;
+        top: 0;
         left: 0;
         width: 0%;
         height: 3px;
@@ -372,7 +339,7 @@ document.addEventListener('keydown', (e) => {
             const targetSection = sections[targetIndex];
             if (targetSection) {
                 e.preventDefault();
-                const offsetTop = targetSection.offsetTop - 60;
+                const offsetTop = targetSection.offsetTop;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
