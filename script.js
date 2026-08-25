@@ -70,7 +70,17 @@ const sections = document.querySelectorAll('section[id]');
 
 function activateNavLink() {
     const scrollY = window.pageYOffset;
-    
+    const nearBottom = window.innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+
+    if (nearBottom && sections.length > 0) {
+        // At page bottom, the last (short) section may be out of range; activate it directly
+        const lastId = sections[sections.length - 1].getAttribute('id');
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${lastId}`);
+        });
+        return;
+    }
+
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 80;
